@@ -85,6 +85,15 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+      - name: List build output
+        run: |
+          echo "Build output contents:"
+          ls -la out/
+          echo "Checking for index.html:"
+          ls -la out/index.html || echo "index.html not found"
+          echo "Checking for images:"
+          ls -la out/bloom-scrolling.jpg || echo "bloom-scrolling.jpg not found"
+          ls -la out/fantasy.png || echo "fantasy.png not found"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

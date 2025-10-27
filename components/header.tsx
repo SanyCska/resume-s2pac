@@ -20,6 +20,15 @@ export function Header() {
     element?.scrollIntoView({ behavior: "smooth" })
   }
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume/resume.pdf'
+    link.download = 'Alexander_Stupak_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "glass-card py-4" : "py-6"}`}
@@ -60,7 +69,10 @@ export function Header() {
           </button>
         </nav>
 
-        <Button className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground">
+        <Button 
+          onClick={handleDownloadResume}
+          className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 active:shadow-lg"
+        >
           <Download className="w-4 h-4" />
           <span className="hidden sm:inline">Download Resume</span>
         </Button>

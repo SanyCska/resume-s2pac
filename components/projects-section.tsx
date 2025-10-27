@@ -25,7 +25,7 @@ const projects: Project[] = [
       "AI-powered microlearning platform that generates personalized learning tracks from short-form videos. ThinkTok allows users to input any topic and instantly get a 10-video learning track built from curated clips across the internet.",
     fullDescription:
       "AI-powered microlearning platform that generates personalized learning tracks from short-form videos. ThinkTok allows users to input any topic and instantly get a 10-video learning track built from curated clips across the internet. The platform can also cut long educational videos into short, engaging fragments, optimized for Reels, Shorts, and TikTok. Beyond the mobile app, the project includes a series of Telegram bots for quick testing and user acquisition. Built with React Native and Firebase, ThinkTok combines AI-driven content discovery with an intuitive mobile experience. 🏆 Winner of the Cyprus Hackathon 2024",
-    image: "bloom-scrolling.jpg",
+    image: "/bloom-scrolling.jpg",
     technologies: ["TypeScript", "React Native", "React", "Python", "ChatGPT API", "FFmpeg", "Telegram Bot API", "PostgreSQL"],
     liveUrl: "https://bloomscrolling.framer.website/",
   },
@@ -37,7 +37,7 @@ const projects: Project[] = [
             "A fantasy league platform inspired by FPL mechanics but tailored for the iGaming industry. Users can draft teams, compete on leaderboards, and earn points based on real-time performance metrics and dynamic player valuations.",
         fullDescription:
             "A fantasy league platform inspired by FPL mechanics but tailored for the iGaming industry. Users can draft teams, compete on leaderboards, and earn points based on real-time performance metrics and dynamic player valuations. The platform includes an internal economy system and advanced data models for calculating player impact and market value. Built with modern web technologies and real-time data processing capabilities.",
-        image: "fantasy.png",
+        image: "/fantasy.png",
         technologies: ["Python", "Next.js", "PostgreSQL", "Redis", "FastAPI", "Prisma", "Docker"],
     },
     {
@@ -48,7 +48,7 @@ const projects: Project[] = [
             "An intelligent job aggregator that collects and analyzes vacancies from Telegram channels, specialized job boards, and other open sources — all displayed in a unified Telegram WebApp.",
         fullDescription:
             "An intelligent job aggregator that collects and analyzes vacancies from Telegram channels, specialized job boards, and other open sources — all displayed in a unified Telegram WebApp. Custom-built AI agents handle continuous parsing and classification of job posts, while LLM-powered tools generate structured and well-designed job cards. Users can select from multiple description styles — from concise corporate summaries to engaging startup-style intros — all generated in real time. The system aims to simplify job discovery by bringing together the fragmented job market inside a clean, conversational interface.",
-        image: "jobs.png",
+        image: "/jobs.png",
         technologies: ["Python", "Telegram Bot API", "WebApp SDK", "Tailwind CSS", "Asyncio", "ChatGPT API", "Next.js"],
         liveUrl: "https://v0-hr-2.vercel.app/",
     },
@@ -60,7 +60,7 @@ const projects: Project[] = [
       "Development of a set of automation scripts for Bauman United, a student football team. The system identifies and analyzes potential players through social media data, public sources, and university entrant lists, using scraping, VK API, and Telegram integrations.",
     fullDescription:
       "Development of a comprehensive automation system for Bauman United, a student football team. The system identifies and analyzes potential players through social media data, public sources, and university entrant lists, using advanced scraping techniques, VK API, and Telegram integrations. Includes tools for automating social media management, player database updates, and AI-based content generation. The system streamlines recruitment processes and enhances team management efficiency through intelligent data processing and automated workflows.",
-    image: "bauman-united-team.jpg",
+    image: "/bauman-united-team.jpg",
     technologies: ["Python", "VK API", "Telegram API", "Google Sheets API", "BeautifulSoup", "Asyncio", "ChatGPT API"],
     githubUrl: "https://github.com/Bauman-United",
   },

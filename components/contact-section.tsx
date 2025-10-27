@@ -1,7 +1,17 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, Download } from "lucide-react"
 
 export function ContactSection() {
+  const handleDownloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume/resume.pdf'
+    link.download = 'Alexander_Stupak_Resume.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
   return (
     <section id="contact" className="relative py-32 px-4">
       <div className="container mx-auto max-w-4xl">
@@ -15,8 +25,9 @@ export function ContactSection() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Button
+              onClick={handleDownloadResume}
               size="lg"
-              className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
+              className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 cursor-pointer transition-all duration-200 hover:scale-105 active:scale-95 active:shadow-xl"
             >
               <Download className="w-5 h-5" />
               Download Resume

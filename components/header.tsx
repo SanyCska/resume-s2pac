@@ -22,7 +22,7 @@ export function Header() {
 
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = '/resume/resume.pdf'
+    link.href = '/resume.pdf'
     link.download = 'Alexander_Stupak_Resume.pdf'
     document.body.appendChild(link)
     link.click()

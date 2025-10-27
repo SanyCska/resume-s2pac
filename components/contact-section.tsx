@@ -6,7 +6,8 @@ import { Github, Linkedin, Mail, Download } from "lucide-react"
 export function ContactSection() {
   const handleDownloadResume = () => {
     const link = document.createElement('a')
-    link.href = '/resume.pdf'
+    const basePath = process.env.NODE_ENV === 'production' ? '/resume-s2pac' : ''
+    link.href = `${basePath}/resume.pdf`
     link.download = 'Alexander_Stupak_Resume.pdf'
     document.body.appendChild(link)
     link.click()

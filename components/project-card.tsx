@@ -33,6 +33,9 @@ const getSkillColor = (skill: string) => {
 }
 
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
+  const basePath = process.env.NODE_ENV === 'production' ? '/resume-s2pac' : ''
+  const imageSrc = project.image ? `${basePath}${project.image}` : `${basePath}/placeholder.svg`
+  
   return (
     <div
       className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
@@ -42,7 +45,7 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       {/* Image Container */}
       <div className="relative h-64 bg-muted overflow-hidden">
         <img
-          src={project.image || "/placeholder.svg"}
+          src={imageSrc}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />

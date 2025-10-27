@@ -26,7 +26,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="relative py-32 px-4">
+    <section id="experience" className="relative py-32 px-4" style={{ zIndex: 1 }}>
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-heading)] mb-12 text-balance">
           Experience
@@ -36,6 +36,7 @@ export function ExperienceSection() {
             <div
               key={index}
               className="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/5 transition-all duration-300 group"
+              style={{ zIndex: 2 }}
             >
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">

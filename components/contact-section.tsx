@@ -13,7 +13,7 @@ export function ContactSection() {
     document.body.removeChild(link)
   }
   return (
-    <section id="contact" className="relative py-32 px-4">
+    <section id="contact" className="relative py-32 px-4" style={{ zIndex: 1 }}>
       <div className="container mx-auto max-w-4xl">
         <div className="glass-card p-8 md:p-16 rounded-2xl text-center space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-heading)] text-balance">

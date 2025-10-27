@@ -65,7 +65,7 @@ export function BinaryRain() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none opacity-60"
-      style={{ mixBlendMode: "screen", zIndex: 1 }}
+      style={{ mixBlendMode: "screen", zIndex: 0 }}
     />
   )
 }

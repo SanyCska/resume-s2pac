@@ -2,7 +2,7 @@
 
 export function FloatingShapes() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: 0 }}>
       {/* Top right gradient blob */}
       <div
         className="absolute -top-40 -right-40 w-96 h-96 rounded-full opacity-20 blur-3xl"

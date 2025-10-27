@@ -74,13 +74,13 @@ export function SkillsSection() {
   const [activeTab, setActiveTab] = useState<keyof typeof skillCategories>("frontend")
 
   return (
-    <section id="skills" className="relative py-32 px-4">
+    <section id="skills" className="relative py-32 px-4" style={{ zIndex: 1 }}>
       <div className="container mx-auto max-w-4xl">
         <h2 className="text-4xl md:text-5xl font-bold font-[family-name:var(--font-heading)] mb-12 text-balance">
           Skills
         </h2>
 
-        <div className="glass-card p-8 md:p-12 rounded-2xl">
+        <div className="glass-card p-8 md:p-12 rounded-2xl" style={{ zIndex: 2 }}>
           <div className="flex flex-wrap gap-4 mb-8">
             {Object.entries(skillCategories).map(([key, category]) => {
               const Icon = category.icon

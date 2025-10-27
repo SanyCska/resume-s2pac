@@ -8,10 +8,35 @@ interface ProjectCardProps {
   onClick: () => void
 }
 
+// Function to generate consistent random colors for skills
+const getSkillColor = (skill: string) => {
+  const colors = [
+    { bg: "bg-blue-500/20", text: "text-blue-400", border: "border-blue-500/30" },
+    { bg: "bg-green-500/20", text: "text-green-400", border: "border-green-500/30" },
+    { bg: "bg-purple-500/20", text: "text-purple-400", border: "border-purple-500/30" },
+    { bg: "bg-pink-500/20", text: "text-pink-400", border: "border-pink-500/30" },
+    { bg: "bg-orange-500/20", text: "text-orange-400", border: "border-orange-500/30" },
+    { bg: "bg-cyan-500/20", text: "text-cyan-400", border: "border-cyan-500/30" },
+    { bg: "bg-yellow-500/20", text: "text-yellow-400", border: "border-yellow-500/30" },
+    { bg: "bg-red-500/20", text: "text-red-400", border: "border-red-500/30" },
+    { bg: "bg-indigo-500/20", text: "text-indigo-400", border: "border-indigo-500/30" },
+    { bg: "bg-emerald-500/20", text: "text-emerald-400", border: "border-emerald-500/30" },
+  ]
+  
+  // Use skill name to get consistent color
+  const hash = skill.split('').reduce((a, b) => {
+    a = ((a << 5) - a) + b.charCodeAt(0)
+    return a & a
+  }, 0)
+  
+  return colors[Math.abs(hash) % colors.length]
+}
+
 export function ProjectCard({ project, onClick }: ProjectCardProps) {
   return (
     <div
-      className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+      className="group relative bg-card border border-border/50 rounded-2xl overflow-hidden hover:border-cyan-500/50 transition-all duration-300 cursor-pointer"
+      style={{ zIndex: 2 }}
       onClick={onClick}
     >
       {/* Image Container */}
@@ -37,14 +62,17 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 text-xs font-medium bg-background/80 text-foreground rounded-full border border-border/50"
-            >
-              {tech}
-            </span>
-          ))}
+          {project.technologies.map((tech) => {
+            const color = getSkillColor(tech)
+            return (
+              <span
+                key={tech}
+                className={`px-3 py-1 text-xs font-medium rounded-full border ${color.bg} ${color.text} ${color.border}`}
+              >
+                {tech}
+              </span>
+            )
+          })}
         </div>
 
         {/* View Details */}
